@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Cilene Suplementos — Sua melhor versao comeca aqui</title>
+<meta name="description" content="Suplementos de alta qualidade para quem leva saude e performance a serio. Entrega rapida, marcas premium."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0}
+
+:root{
+  --bg:#FBF8F4;
+  --fg:#2D2A26;
+  --soft:#6B6560;
+  --line:rgba(45,42,38,.08);
+  --blush:#F2D9D0;
+  --sage:#D4DDD2;
+  --lavender:#DDD5E8;
+  --sky:#D0E2EF;
+  --cream:#F5EDE4;
+  --peach:#F0C9B6;
+  --card:rgba(255,255,255,.7);
+  --r:24px;
+  --r-sm:16px;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  font-family:"DM Sans",system-ui,sans-serif;
+  background:var(--bg);color:var(--fg);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* ── NAV ─────────────────────────────────── */
+nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(251,248,244,.85);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
+}
+.nav__inner{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:16px 0;
+}
+.nav__brand{
+  font-family:"Playfair Display",serif;
+  font-size:22px;font-weight:700;letter-spacing:-.02em;
+  color:var(--fg);text-decoration:none;
+}
+.nav__brand span{color:#C4856C}
+.nav__links{display:flex;gap:24px;align-items:center}
+.nav__links a{
+  font-size:14px;font-weight:500;color:var(--soft);
+  text-decoration:none;transition:color .2s;
+}
+.nav__links a:hover{color:var(--fg)}
+.nav__cta{
+  display:inline-flex;align-items:center;
+  padding:10px 22px;border-radius:999px;
+  background:var(--fg);color:#fff;
+  font-size:13px;font-weight:600;letter-spacing:.03em;
+  text-decoration:none;transition:transform .2s,box-shadow .2s;
+}
+.nav__cta:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(45,42,38,.15)}
+
+/* ── HERO ─────────────────────────────────── */
+.hero{
+  text-align:center;
+  padding:80px 0 60px;
+}
+.hero__badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:6px 16px;border-radius:999px;
+  background:var(--sage);
+  font-size:12px;font-weight:600;letter-spacing:.08em;
+  text-transform:uppercase;color:#3D5A3A;
+  margin-bottom:24px;
+}
+.hero__badge::before{content:"";width:6px;height:6px;border-radius:50%;background:#5A8A55;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+.hero__title{
+  font-family:"Playfair Display",serif;
+  font-size:clamp(36px,6vw,64px);
+  font-weight:700;letter-spacing:-.03em;
+  line-height:1.08;margin-bottom:20px;
+}
+.hero__title em{font-style:italic;color:#C4856C}
+
+.hero__sub{
+  font-size:18px;color:var(--soft);
+  max-width:520px;margin:0 auto 32px;
+  line-height:1.7;
+}
+
+.hero__actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:14px 32px;border-radius:999px;
+  font-size:15px;font-weight:600;text-decoration:none;
+  transition:transform .2s,box-shadow .2s;
+  cursor:pointer;border:none;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn--primary{background:var(--fg);color:#fff;box-shadow:0 4px 20px rgba(45,42,38,.12)}
+.btn--primary:hover{box-shadow:0 8px 30px rgba(45,42,38,.2)}
+.btn--soft{background:var(--blush);color:#7A4A3A}
+.btn--soft:hover{box-shadow:0 6px 20px rgba(242,217,208,.5)}
+
+/* ── TRUST BAR ────────────────────────────── */
+.trust{
+  text-align:center;padding:32px 0 48px;
+}
+.trust__label{
+  font-size:12px;color:var(--soft);text-transform:uppercase;
+  letter-spacing:.12em;font-weight:500;margin-bottom:16px;
+}
+.trust__logos{
+  display:flex;justify-content:center;gap:40px;flex-wrap:wrap;
+  opacity:.45;font-weight:700;font-size:15px;letter-spacing:.04em;
+}
+
+/* ── BENEFITS ─────────────────────────────── */
+.benefits{padding:60px 0}
+.benefits__header{text-align:center;margin-bottom:40px}
+.section-tag{
+  font-size:12px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:#8B6AAE;margin-bottom:10px;
+}
+.section-title{
+  font-family:"Playfair Display",serif;
+  font-size:clamp(28px,4vw,42px);font-weight:700;
+  letter-spacing:-.02em;line-height:1.15;
+}
+.section-sub{
+  color:var(--soft);font-size:16px;margin-top:12px;
+  max-width:480px;margin-left:auto;margin-right:auto;
+}
+
+.benefits__grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+}
+.bcard{
+  padding:32px 28px;border-radius:var(--r);
+  border:1px solid var(--line);
+  background:var(--card);
+  backdrop-filter:blur(8px);
+  transition:transform .25s,box-shadow .25s;
+}
+.bcard:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.06)}
+.bcard__icon{
+  width:48px;height:48px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;margin-bottom:16px;
+}
+.bcard:nth-child(1) .bcard__icon{background:var(--blush)}
+.bcard:nth-child(2) .bcard__icon{background:var(--sage)}
+.bcard:nth-child(3) .bcard__icon{background:var(--lavender)}
+.bcard:nth-child(4) .bcard__icon{background:var(--sky)}
+.bcard:nth-child(5) .bcard__icon{background:var(--cream)}
+.bcard:nth-child(6) .bcard__icon{background:var(--peach)}
+.bcard__title{font-size:17px;font-weight:700;margin-bottom:8px}
+.bcard__desc{font-size:14px;color:var(--soft);line-height:1.65}
+
+/* ── PRODUCTS ─────────────────────────────── */
+.products{padding:60px 0;background:linear-gradient(180deg,transparent,rgba(212,221,210,.15),transparent)}
+.products__grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+  margin-top:40px;
+}
+.pcard{
+  border-radius:var(--r);overflow:hidden;
+  border:1px solid var(--line);background:#fff;
+  transition:transform .25s,box-shadow .25s;
+}
+.pcard:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,.08)}
+.pcard__img{
+  aspect-ratio:1;
+  display:flex;align-items:center;justify-content:center;
+  font-size:56px;
+}
+.pcard:nth-child(1) .pcard__img{background:var(--blush)}
+.pcard:nth-child(2) .pcard__img{background:var(--sage)}
+.pcard:nth-child(3) .pcard__img{background:var(--lavender)}
+.pcard:nth-child(4) .pcard__img{background:var(--sky)}
+.pcard:nth-child(5) .pcard__img{background:var(--cream)}
+.pcard:nth-child(6) .pcard__img{background:var(--peach)}
+.pcard__body{padding:20px 24px 24px}
+.pcard__cat{
+  font-size:11px;font-weight:600;letter-spacing:.08em;
+  text-transform:uppercase;color:#8B6AAE;margin-bottom:6px;
+}
+.pcard__name{font-size:18px;font-weight:700;margin-bottom:4px}
+.pcard__desc{font-size:13px;color:var(--soft);margin-bottom:14px;line-height:1.6}
+.pcard__row{display:flex;align-items:center;justify-content:space-between}
+.pcard__price{font-size:22px;font-weight:800;letter-spacing:-.02em}
+.pcard__price small{font-size:13px;font-weight:500;color:var(--soft)}
+.pcard__buy{
+  padding:10px 20px;border-radius:999px;
+  background:var(--fg);color:#fff;
+  font-size:13px;font-weight:600;text-decoration:none;
+  transition:transform .15s;
+}
+.pcard__buy:hover{transform:scale(1.04)}
+
+/* ── TESTIMONIALS ─────────────────────────── */
+.testimonials{padding:60px 0}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.tcard{
+  padding:28px;border-radius:var(--r);
+  border:1px solid var(--line);background:var(--card);
+}
+.tcard__stars{color:#E8B86D;font-size:14px;letter-spacing:2px;margin-bottom:12px}
+.tcard__text{font-size:15px;line-height:1.7;margin-bottom:16px;font-style:italic;color:var(--soft)}
+.tcard__author{font-size:14px;font-weight:700}
+.tcard__role{font-size:12px;color:var(--soft)}
+
+/* ── CTA ──────────────────────────────────── */
+.cta-section{
+  padding:60px 0;text-align:center;
+}
+.cta-box{
+  padding:56px 40px;border-radius:var(--r);
+  background:linear-gradient(135deg,var(--blush),var(--lavender));
+  position:relative;overflow:hidden;
+}
+.cta-box::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 30% 40%,rgba(255,255,255,.5),transparent 60%);
+}
+.cta-box>*{position:relative}
+.cta-box h2{
+  font-family:"Playfair Display",serif;
+  font-size:clamp(26px,4vw,38px);font-weight:700;
+  letter-spacing:-.02em;margin-bottom:12px;
+}
+.cta-box p{color:var(--soft);font-size:16px;margin-bottom:28px;max-width:440px;margin-left:auto;margin-right:auto}
+
+/* ── FAQ ──────────────────────────────────── */
+.faq{padding:60px 0}
+.faq__list{max-width:680px;margin:40px auto 0}
+.faq-item{
+  border:1px solid var(--line);border-radius:var(--r-sm);
+  margin-bottom:10px;overflow:hidden;background:var(--card);
+}
+.faq-item summary{
+  padding:18px 22px;cursor:pointer;
+  font-weight:600;font-size:15px;
+  list-style:none;display:flex;justify-content:space-between;align-items:center;
+}
+.faq-item summary::after{content:"+";font-size:20px;color:var(--soft);transition:transform .2s}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-answer{padding:0 22px 18px;font-size:14px;color:var(--soft);line-height:1.7}
+
+/* ── FOOTER ───────────────────────────────── */
+footer{
+  padding:40px 0;text-align:center;
+  border-top:1px solid var(--line);
+  font-size:13px;color:var(--soft);
+}
+footer a{color:var(--fg);text-decoration:none;font-weight:600}
+
+/* ── WHATSAPP FLOAT ───────────────────────── */
+.whatsapp{
+  position:fixed;bottom:24px;right:24px;z-index:100;
+  width:56px;height:56px;border-radius:50%;
+  background:#25D366;color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:28px;text-decoration:none;
+  box-shadow:0 4px 20px rgba(37,211,102,.35);
+  transition:transform .2s;
+}
+.whatsapp:hover{transform:scale(1.1)}
+
+/* ── RESPONSIVE ───────────────────────────── */
+@media(max-width:768px){
+  .benefits__grid,.products__grid,.tgrid{grid-template-columns:1fr}
+  .hero{padding:48px 0 32px}
+  .nav__links a:not(.nav__cta){display:none}
+}
+@media(min-width:769px) and (max-width:1024px){
+  .benefits__grid,.products__grid,.tgrid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="wrap nav__inner">
+    <a href="#" class="nav__brand">Mamuska Suplementos<span>.</span></a>
+    <div class="nav__links">
+      <a href="#produtos">Produtos</a>
+      <a href="#beneficios">Por que nos</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://wa.me/5500000000000?text=Oi!%20Quero%20saber%20mais%20sobre%20os%20suplementos" class="nav__cta" target="_blank">Pedir agora</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero wrap">
+  <div class="hero__badge">Novidades frescas toda semana</div>
+  <h1 class="hero__title">Sua melhor versão<br/>começa por <em>dentro</em></h1>
+  <p class="hero__sub">Suplementos premium selecionados a dedo para quem leva saude, bem-estar e performance a sério. Qualidade que você sente.</p>
+  <div class="hero__actions">
+    <a href="#produtos" class="btn btn--primary">Ver produtos</a>
+    <a href="https://wa.me/5511985966343?text=Oi!%20Quero%20saber%20mais%20sobre%20os%20suplementos" class="btn btn--soft" target="_blank">Falar no WhatsApp</a>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div class="trust wrap">
+  <p class="trust__label">Marcas que trabalhamos</p>
+  <div class="trust__logos">
+    <span>Growth</span>
+    <span>Integral Médica</span>
+    <span>Max Titanium</span>
+    <span>Darkness</span>
+    <span>Dux Nutrition</span>
+  </div>
+</div>
+
+<!-- BENEFITS -->
+<section class="benefits wrap" id="beneficios">
+  <div class="benefits__header">
+    <p class="section-tag">Por que escolher a Mamuska?</p>
+    <h2 class="section-title">Cuidado de verdade com amor de mãe<br/>pra sua saúde</h2>
+    <p class="section-sub">Não vendemos só suplementos. Entregamos confiança, qualidade e um atendimento que faz diferenca.</p>
+  </div>
+  <div class="benefits__grid">
+    <div class="bcard">
+      <div class="bcard__icon">&#9989;</div>
+      <h3 class="bcard__title">Produtos originais</h3>
+      <p class="bcard__desc">Trabalhamos apenas com marcas autorizadas e produtos com garantia de procedência.</p>
+    </div>
+    <div class="bcard">
+      <div class="bcard__icon">&#128666;</div>
+      <h3 class="bcard__title">Entrega rápida</h3>
+      <p class="bcard__desc">Enviamos no mesmo dia para pedidos feitos ate às 14h. Praticidade no seu ritmo.</p>
+    </div>
+    <div class="bcard">
+      <div class="bcard__icon">&#128172;</div>
+      <h3 class="bcard__title">Atendimento pessoal</h3>
+      <p class="bcard__desc">Tire dúvidas direto pelo WhatsApp. Resposta rápida e atendimento humanizado.</p>
+    </div>
+    <div class="bcard">
+      <div class="bcard__icon">&#127942;</div>
+      <h3 class="bcard__title">Preços competitivos</h3>
+      <p class="bcard__desc">Qualidade premium com preços justos. Promoções exclusivas para clientes fieis.</p>
+    </div>
+    <div class="bcard">
+      <div class="bcard__icon">&#128150;</div>
+      <h3 class="bcard__title">Curadoria de qualidade</h3>
+      <p class="bcard__desc">Cada produto e selecionado com critério. So entra no catálogo o que realmente funciona.</p>
+    </div>
+    <div class="bcard">
+      <div class="bcard__icon">&#127793;</div>
+      <h3 class="bcard__title">Opções naturais</h3>
+      <p class="bcard__desc">Linha completa de suplementos naturais, veganos e sem lactose para todos os perfis.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="produtos">
+  <div class="wrap">
+    <div class="benefits__header">
+      <p class="section-tag">Nosso catálogo</p>
+      <h2 class="section-title">Os mais pedidos</h2>
+      <p class="section-sub">Produtos que nossos clientes amam e recomendam. Escolha o seu e sinta a diferença.</p>
+    </div>
+    <div class="products__grid">
+
+      <div class="pcard">
+        <div class="pcard__img">&#129371;</div>
+        <div class="pcard__body">
+          <p class="pcard__cat">Proteína</p>
+          <h3 class="pcard__name">Whey Protein Concentrado</h3>
+          <p class="pcard__desc">25g de proteína por dose. Sabor chocolate. Ideal para pós-treino e ganho de massa.</p>
+          <div class="pcard__row">
+            <span class="pcard__price">R$89 <small>/ 900g</small></span>
+            <a href="https://wa.me/5511985966343?text=Quero%20o%20Whey%20Protein%20Concentrado!" class="pcard__buy" target="_blank">Comprar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard__img">&#9889;</div>
+        <div class="pcard__body">
+          <p class="pcard__cat">Pré-treino</p>
+          <h3 class="pcard__name">Pré-Workout Explosion</h3>
+          <p class="pcard__desc">Energia, foco e vasodilataçao. Com beta-alanina e cafeína. Rende 30 doses.</p>
+          <div class="pcard__row">
+            <span class="pcard__price">R$69 <small>/ 300g</small></span>
+            <a href="https://wa.me/5511985966343?text=Quero%20o%20Pre-Workout%20Explosion!" class="pcard__buy" target="_blank">Comprar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard__img">&#128170;</div>
+        <div class="pcard__body">
+          <p class="pcard__cat">Creatina</p>
+          <h3 class="pcard__name">Creatina Monohidratada</h3>
+          <p class="pcard__desc">Pura, sem sabor. Aumenta forca e volume muscular. 100 doses por pote.</p>
+          <div class="pcard__row">
+            <span class="pcard__price">R$79 <small>/ 300g</small></span>
+            <a href="https://wa.me/5511985966343?text=Quero%20a%20Creatina%20Monohidratada!" class="pcard__buy" target="_blank">Comprar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard__img">&#127811;</div>
+        <div class="pcard__body">
+          <p class="pcard__cat">Saúde</p>
+          <h3 class="pcard__name">Multivitaminico Daily</h3>
+          <p class="pcard__desc">13 vitaminas e 10 minerais essenciais. Uma cápsula por dia para seu bem-estar completo.</p>
+          <div class="pcard__row">
+            <span class="pcard__price">R$49 <small>/ 60 caps</small></span>
+            <a href="https://wa.me/5511985966343?text=Quero%20o%20Multivitaminico%20Daily!" class="pcard__buy" target="_blank">Comprar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard__img">&#127861;</div>
+        <div class="pcard__body">
+          <p class="pcard__cat">Emagrecimento</p>
+          <h3 class="pcard__name">Termogênico Slim Burn</h3>
+          <p class="pcard__desc">Acelera o metabolismo e aumenta a queima de gordura. Com cafeína e gengibre.</p>
+          <div class="pcard__row">
+            <span class="pcard__price">R$59 <small>/ 60 caps</small></span>
+            <a href="https://wa.me/5511985966343?text=Quero%20o%20Termogenico%20Slim%20Burn!" class="pcard__buy" target="_blank">Comprar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard__img">&#127796;</div>
+        <div class="pcard__body">
+          <p class="pcard__cat">Recuperação</p>
+          <h3 class="pcard__name">Glutamina Pura</h3>
+          <p class="pcard__desc">Aminoácido essencial para recuperação muscular e imunidade. Sem sabor, versátil.</p>
+          <div class="pcard__row">
+            <span class="pcard__price">R$55 <small>/ 300g</small></span>
+            <a href="https://wa.me/5511985966343?text=Quero%20a%20Glutamina%20Pura!" class="pcard__buy" target="_blank">Comprar</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials wrap" id="depoimentos">
+  <div class="benefits__header">
+    <p class="section-tag">Depoimentos</p>
+    <h2 class="section-title">Quem compra, recomenda</h2>
+  </div>
+  <div class="tgrid">
+    <div class="tcard">
+      <div class="tcard__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="tcard__text">"Entrega super rápida e o whey é incrivel! Ja pedí 3 vezes e sempre chega certinho. Atendimento nota 10."</p>
+      <p class="tcard__author">Juliana M.</p>
+      <p class="tcard__role">Cliente desde 2024</p>
+    </div>
+    <div class="tcard">
+      <div class="tcard__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="tcard__text">"Melhor preço de creatina que achei. E ainda tive ajuda pra montar minha stack completa. Recomendo demais!"</p>
+      <p class="tcard__author">Rafael S.</p>
+      <p class="tcard__role">Cliente desde 2023</p>
+    </div>
+    <div class="tcard">
+      <div class="tcard__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="tcard__text">"A Mamuska me ajudou a encontrar suplementos sem lactose. Difícil achar quem entende e se importa de verdade."</p>
+      <p class="tcard__author">Camila R.</p>
+      <p class="tcard__role">Cliente desde 2024</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section wrap">
+  <div class="cta-box">
+    <h2>Pronta pra começar?</h2>
+    <p>Fale com a gente pelo WhatsApp e monte seu pedido personalizado. Resposta em minutos!</p>
+    <a href="https://wa.me/5511985966343?text=Oi!%20Quero%20montar%20meu%20pedido!" class="btn btn--primary" target="_blank">Falar no WhatsApp</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq wrap" id="faq">
+  <div class="benefits__header">
+    <p class="section-tag">Dúvidas frequentes</p>
+    <h2 class="section-title">Perguntas e respostas</h2>
+  </div>
+  <div class="faq__list">
+    <details class="faq-item">
+      <summary>Como faço meu pedido?</summary>
+      <div class="faq-answer">É super simples! Basta clicar em "Comprar" no produto desejado ou nos chamar no WhatsApp. Montamos seu pedido juntos e combinamos a entrega.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Quais formas de pagamento aceitam?</summary>
+      <div class="faq-answer">Aceitamos Pix, cartao de crédito/débito e dinheiro na entrega. Pix tem desconto especial!</div>
+    </details>
+    <details class="faq-item">
+      <summary>Fazem entrega? Quanto custa?</summary>
+      <div class="faq-answer">Sim! Entregamos na região. Para pedidos acima de R$150, a entrega e grátis. Consulte sua localidade pelo WhatsApp.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Os produtos são originais?</summary>
+      <div class="faq-answer">100% originais. Trabalhamos com distribuidores autorizados das marcas. Todos os produtos tem lote e validade rastreável.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Posso trocar ou devolver?</summary>
+      <div class="faq-answer">Sim, se o produto estiver lacrado e dentro de 7 dias. Para trocas, entre em contato pelo WhatsApp.</div>
+    </details>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <p style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;margin-bottom:8px">Mamuska<span style="color:#C4856C">.</span></p>
+    <p>&copy; 2024 Mamuska Suplementos. Todos os direitos reservados.</p>
+    <p style="margin-top:6px">Feito com amor por <a href="https://volynx.world" target="_blank">VOLYNX</a></p>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/5511985966343?text=Oi!%20Vim%20pelo%20site%20e%20quero%20saber%20mais!" class="whatsapp" target="_blank" aria-label="WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5 -.669-.51 -.173 -.008 -.371 -.01 -.57 -.01 -.198 0 -.52 .074 -.792 .372 -.272 .297 -1.04 1.016 -1.04 2.479 0 1.462 1.065 ２.8７５ １.２１３ ３.０７４ .１４９ .１９８ ２.０９６ ３．２ ５．０７７ ４．４８７ .７０９ .３０６ １．２６２ .４８９ １．６９４ .６２５ .７１２ .２２７ １．３６ .１９５ １．８７１ .１１８ .５７１ -.０８５ １．７５８ -.７１９ ２．００６ -１．４１３ .２４８ -.６９４ .２４８ -１．２８９ .１７３ -１．４１３ -.０７４ -.１２４ -.２７２ -.１９８ -.５７ -.３４７m-５．４２１ ７．４０３h‐.“
+</a>
+
+</body>
+</html>
